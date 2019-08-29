@@ -9,7 +9,6 @@ name = "pypi"
 
 graphene = "*"
 pytest = "*"
-ipdb = "*"
 
 
 [packages]

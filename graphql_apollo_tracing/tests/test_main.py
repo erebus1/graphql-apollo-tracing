@@ -45,6 +45,7 @@ def test_positive():
     assert result.data['files'][0]['id'] == 1
     assert result.errors is None
     assert result.extensions['ftv1']
+    assert len(result.extensions['ftv1']) > 200
 
 # todo test redefine enabled
 # test disabled

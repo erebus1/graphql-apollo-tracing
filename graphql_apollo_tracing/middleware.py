@@ -112,15 +112,18 @@ class TracingMiddleware(object):
             return ''
 
     def _after_resolve(self, start_time, resolver_stats, info, data):
-            stat = {
-                "path": info.path,
-                "parent_type": str(info.parent_type),
-                "original_field_name": info.field_name,  # todo support alias?
-                "type": str(info.return_type),
-                "start_time": start_time - self.start_time,
-                "end_time": self.now() - self.start_time,
-            }  # todo also will not track loaders correctly
-            resolver_stats.append(stat)
+            try:
+                stat = {
+                    "path": info.path,
+                    "parent_type": str(info.parent_type),
+                    "original_field_name": info.field_name,  # todo support alias?
+                    "type": str(info.return_type),
+                    "start_time": start_time - self.start_time,
+                    "end_time": self.now() - self.start_time,
+                }  # todo also will not track loaders correctly
+                resolver_stats.append(stat)
+            except:
+                pass
             return data
 
     def resolve(self, _next, root, info, *args, **kwargs):
