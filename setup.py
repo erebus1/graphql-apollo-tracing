@@ -20,7 +20,7 @@ setup(
   download_url = 'https://github.com/erebus1/graphql-apollo-tracing/archive/0.0.1.tar.gz',
   keywords = ['graphene', 'gql', 'federation', 'tracing'],
   install_requires=[
-          "graphql-core>=2.2.0,<3",
+          "graphql-core>=2.2.0",
           "protobuf>=3.9.0,<4",
       ],
   classifiers=[
