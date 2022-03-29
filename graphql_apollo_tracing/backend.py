@@ -43,7 +43,7 @@ class TracingGQLBackend(GraphQLCoreBackend):
         def execute_decorator(func):
             @wraps(func)
             def wrapper(*args, **kwargs):
-                tracing_enabled = self._is_tracing_enabled(kwargs['context'])
+                tracing_enabled = self._is_tracing_enabled(kwargs['context_value'])
                 if tracing_enabled:
                     # todo should it be the first or last middleware?
                     kwargs['middleware'] = (kwargs.get('middleware') or []) + [tracing_middleware]
