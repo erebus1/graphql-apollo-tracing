@@ -14,7 +14,7 @@ pytest = "*"
 [packages]
 
 graphql-core = "==2.2.1"
-protobuf = "~=3.9.1"
+protobuf = "~=3.18.3"
 
 
 [requires]
